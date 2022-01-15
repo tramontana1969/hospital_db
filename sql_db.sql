@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: db:3306
--- Время создания: Янв 14 2022 г., 16:42
+-- Время создания: Янв 15 2022 г., 12:30
 -- Версия сервера: 5.7.36
 -- Версия PHP: 7.4.20
 
@@ -90,7 +90,7 @@ CREATE TABLE `Medicine` (
 
 INSERT INTO `Medicine` (`id`, `name`, `description`, `side_effect`) VALUES
 (1, 'Aspirin', 'Aspirin is used to reduce fever and relieve mild to moderate pain from conditions such as muscle aches, toothaches, common cold, and headaches. It may also be used to reduce pain and swelling in conditions such as arthritis. Aspirin is known as a salicylate and a nonsteroidal anti-inflammatory drug (NSAID). It works by blocking a certain natural substance in your body to reduce pain and swelling. Consult your doctor before treating a child younger than 12 years.Your doctor may direct you to take a low dose of aspirin to prevent blood clots. This effect reduces the risk of stroke and heart attack. If you have recently had surgery on clogged arteries (such as bypass surgery, carotid endarterectomy, coronary stent), your doctor may direct you to use aspirin in low doses as a \"blood thinner\" to prevent blood clots.', 'Conditions of excess stomach acid secretion. Irritation of the stomach or intestines. Nausea. Vomiting. Heartburn. Stomach cramps.'),
-(2, 'Quinolone', 'Quinolones are a class of synthetic bactericidal antibiotics with broad-spectrum activity, which can inhibit both Gram-negative and Gram-positive bacteria, including anaerobes. They exert their activity by binding to the bacterial topoisomerase type II enzymes, interfering with the DNA synthesis pathway. Binding to the cleavage complex occurs via a water–metal ion bridge, which links the keto carbonyl group of quinolone indirectly to the serine and acidic residue of the enzymes mediated by a Mg2+ ion.', 'Gastrointestinal effects, Phototoxicity'),
+(2, 'Quinolone', 'Quinolones are a class of synthetic bactericidal antibiotics with broad-spectrum activity, which can inhibit both Gram-negative and Gram-positive bacteria, including anaerobes. They exert their activity by binding to the bacterial topoisomerase type II enzymes, interfering with the DNA synthesis pathway. Binding to the cleavage complex occurs via a water metal ion bridge, which links the keto carbonyl group of quinolone indirectly to the serine and acidic residue of the enzymes mediated by a Mg2+ ion.', 'Gastrointestinal effects, Phototoxicity'),
 (3, 'Fromilid', 'Fromilid Unoromycin film-coated tablets are indicated for the treatment of the following bacterial infections, when caused by Fromilid Unoromycin-susceptible bacteria.\r\n\r\n- Bacterial pharyngitis\r\n\r\n- Mild to moderate community acquired pneumonia\r\n\r\n- Acute bacterial sinusitis (adequately diagnosed)\r\n\r\n- Acute exacerbation of chronic bronchitis\r\n\r\n- Skin infections and soft tissue infections of mild to moderate severity,\r\n\r\n- In appropriate combination with antibacterial therapeutic regimens and an appropriate ulcer healing agent for the eradication of Helicobacter pylori in patients with Helicobacter pylori associated ulcers.\r\n\r\nConsideration should be given to official guidance on the appropriate use of antibacterial agents.', 'Diarrhea, nausea, vomiting, headache, and changes in taste');
 
 -- --------------------------------------------------------
@@ -103,15 +103,15 @@ CREATE TABLE `Patient` (
   `id` int(11) NOT NULL,
   `name` char(48) NOT NULL,
   `sex` char(1) NOT NULL,
-  `date_of_Birth` date NOT NULL,
-  `home_addres` char(128) NOT NULL
+  `date_of_birth` date NOT NULL,
+  `home_address` char(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Дамп данных таблицы `Patient`
 --
 
-INSERT INTO `Patient` (`id`, `name`, `sex`, `date_of_Birth`, `home_addres`) VALUES
+INSERT INTO `Patient` (`id`, `name`, `sex`, `date_of_birth`, `home_address`) VALUES
 (1, 'Richard Brown', 'M', '1981-06-10', 'London, Bond street, 128'),
 (3, 'Laura Evans', 'F', '1994-02-05', 'London, Oxford street 80E'),
 (4, 'Alexandra Jonsoon', 'F', '1996-04-10', 'Birmingham, Kings street 25');
@@ -186,7 +186,7 @@ ALTER TABLE `Examine`
 -- AUTO_INCREMENT для таблицы `Medicine`
 --
 ALTER TABLE `Medicine`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `Patient`
