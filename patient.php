@@ -9,7 +9,7 @@
         include 'creds.php';
         $patient_data = "SELECT * FROM Patient;";
         $res = $db->query($patient_data);
-        echo "<table><tr><th>id</th><th>name</th><th>sex</th><th>date_of_birth</th>><th>home_address</th>></tr>";
+        echo "<table><tr><th>id</th><th>name</th><th>sex</th><th>date_of_birth</th>><th>home_address</th>><th>delete patient</th></tr>";
         echo 'Patients table';
         while ($row = $res->fetch()){
             echo "<tr>";
@@ -18,6 +18,10 @@
                 echo "<td>".$row['sex']."</td>";
                 echo "<td>".$row['date_of_birth']."</td>";
                 echo "<td>".$row['home_address']."</td>";
+                echo "<td><form method='post' action='delete/delete_patient.php'>
+                    <input type='hidden' name='id' value='".$row['id']."'>
+                    <input type='submit' value='delete'>
+                </form></td>";
             echo "</tr>";
         }
         echo "</table>";

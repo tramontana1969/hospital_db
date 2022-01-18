@@ -11,7 +11,8 @@
         $examine_data = "SELECT * FROM Examine";
         $res = $db->query($examine_data);
         echo 'Examine table';
-        echo '<table><tr><th>id</th><th>diagnosis</th><th>patient</th><th>date</th><th>place</th><th>symptoms</th><th>medical_prescription</th><th>doctors_name</th></tr>';
+        echo '<table><tr><th>id</th><th>diagnosis</th><th>patient</th><th>date</th><th>place</th>
+                <th>symptoms</th><th>medical_prescription</th><th>doctors_name</th><th>delete examine</th></tr>';
         while ($row = $res->fetch()) {
             echo '<tr>';
             echo '<td>'.$row['id'].'</td>';
@@ -22,6 +23,10 @@
             echo '<td>'.$row['symptoms'].'</td>';
             echo '<td>'.$row['medical_prescription'].'</td>';
             echo '<td>'.$row['doctors_name'].'</td>';
+            echo "<td><form method='post' action='delete/delete_exam.php'>
+                    <input type='hidden' name='id' value='".$row['id']."'>   
+                    <input type='submit' value='delete'>   
+                </form></td>";
             echo '</tr>';
         }
         echo '</table>';
