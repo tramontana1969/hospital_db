@@ -11,7 +11,7 @@
         $medicine_data  = 'SELECT * FROM Medicine';
         $res = $db->query($medicine_data);
         echo 'Meds table';
-        echo '<table><tr><th>id</th><th>name</th><th>description</th><th>side_effect</th><th>delete med</th></tr>';
+        echo '<table><tr><th>id</th><th>name</th><th>description</th><th>side_effect</th><th>delete med</th><th>edit med</th></tr>';
         while ($row = $res->fetch()) {
             echo '<tr>';
             echo '<td>'.$row['id'].'</td>';
@@ -22,6 +22,7 @@
                     <input type='hidden' name='id' value='".$row['id']."'/>
                     <input type='submit' value='delete'/>
                 </form></td>";
+            echo "<td><a href='update/update_med.php?id=".$row['id']."'><button>edit</button></a></td>";
             echo '</tr>';
         }
         echo '</table>';

@@ -9,7 +9,8 @@
         include 'creds.php';
         $patient_data = "SELECT * FROM Patient;";
         $res = $db->query($patient_data);
-        echo "<table><tr><th>id</th><th>name</th><th>sex</th><th>date_of_birth</th>><th>home_address</th>><th>delete patient</th></tr>";
+        echo "<table><tr><th>id</th><th>name</th><th>sex</th>
+            <th>date_of_birth</th>><th>home_address</th>><th>delete patient</th><th>edit patient</th></tr>";
         echo 'Patients table';
         while ($row = $res->fetch()){
             echo "<tr>";
@@ -22,6 +23,7 @@
                     <input type='hidden' name='id' value='".$row['id']."'>
                     <input type='submit' value='delete'>
                 </form></td>";
+                echo "<td><a href='update/update_patient.php?id=".$row['id']."'><button>edit</button></a></td>";
             echo "</tr>";
         }
         echo "</table>";
